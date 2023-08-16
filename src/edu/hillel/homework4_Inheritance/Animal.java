@@ -29,18 +29,16 @@ public class Animal {
     }
 
 
-
-    public void run(){
-
-    }
-
-
-
-    public void swim(){
+    public void run() {
 
     }
 
-    public static void showAnimalCounter(){
+
+    public void swim() {
+
+    }
+
+    public static void showAnimalCounter() {
         System.out.println("Animals created: " + animalCounter);
     }
 }

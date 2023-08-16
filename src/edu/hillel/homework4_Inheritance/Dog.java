@@ -10,12 +10,10 @@ public class Dog extends Animal {
     public Dog(String name, int runLength, int swimLength) {
         super(name, runLength, swimLength);
         dogCounter++;
-
     }
 
-    @Override
+
     public void run() {
-        super.run();
         if (getRunLength() > DOG_RUN_RESTRICTION) {
             System.out.println(getName() + " can only run up to " + DOG_RUN_RESTRICTION + " meters."
                     + "(" + getRunLength() + ")");
@@ -24,9 +22,8 @@ public class Dog extends Animal {
         }
     }
 
-    @Override
+
     public void swim() {
-        super.swim();
         if (getSwimLength() > DOG_SWIM_RESTRICTION) {
             System.out.println(getName() + " can only swim up to " + DOG_SWIM_RESTRICTION + " meters."
                     + "(" + getSwimLength() + ")");
@@ -35,8 +32,7 @@ public class Dog extends Animal {
         }
     }
 
-
-    public static void showDogCounter(){
+    public static void showDogCounter() {
         System.out.println("Dogs created: " + dogCounter);
     }
 }
