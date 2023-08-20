@@ -1,17 +1,12 @@
 package edu.hillel.homework5_Polymorphism.Participants;
 
 public class Treadmill extends Obstacle {
-
     private int length;
 
-    public Treadmill(int length) {
-        this.length = length;
+    public Treadmill(String name) {
+        super(name);
     }
 
-    @Override
-    public int getLength() {
-        return length;
-    }
 
     @Override
     public void overcome(Participant participant) {

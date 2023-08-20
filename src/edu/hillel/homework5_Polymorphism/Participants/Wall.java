@@ -1,15 +1,10 @@
 package edu.hillel.homework5_Polymorphism.Participants;
 
 public class Wall extends Obstacle {
-    private int height;
 
-    public Wall(int height) {
-        this.height = height;
-    }
 
-    @Override
-    public int getHeight() {
-        return height;
+    public Wall(String name) {
+        super(name);
     }
 
     @Override
