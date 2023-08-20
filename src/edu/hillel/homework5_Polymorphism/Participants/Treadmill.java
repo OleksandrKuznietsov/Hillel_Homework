@@ -1,0 +1,26 @@
+package edu.hillel.homework5_Polymorphism.Participants;
+
+public class Treadmill extends Obstacle {
+
+    private int length;
+
+    public Treadmill(int length) {
+        this.length = length;
+    }
+
+    @Override
+    public int getLength() {
+        return length;
+    }
+
+    @Override
+    public void overcome(Participant participant) {
+        if (participant.getRunRestriction() <= getLength()) {
+            System.out.println("Participant " + participant.getName() + " couldn't pass an obstacle " + getName()
+                    + " on a distance " + getLength() + ". Distance passed: " + participant.getRunRestriction());
+        } else {
+            System.out.println("Participant " + participant.getName() + " passed an obstacle " + getName()
+                    + " on a distance " + getLength());
+        }
+    }
+}
