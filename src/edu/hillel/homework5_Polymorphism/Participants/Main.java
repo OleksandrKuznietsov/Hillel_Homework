@@ -27,17 +27,11 @@ public class Main {
         for (int i = 0; i < participants.length; i++) {
             participants[i].setRunRestriction(random.nextInt(200));
             participants[i].setJumpRestriction(random.nextInt(20));
-            for (int j = 0; j < obstacles.length - 1; j++) {
-                participants[i].run(obstacles[j]);
-                if (participants[i].getRunRestriction() >= treadmill.getLength()) {
-                    participants[i].jump(obstacles[j + 1]);
-                }
+            for (int j = 0; j < obstacles.length; j++) {
+                obstacles[j].overcome(participants[i]);
             }
             System.out.println();
-
-
         }
-
     }
 }
 

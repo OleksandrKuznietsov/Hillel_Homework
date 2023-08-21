@@ -12,13 +12,18 @@ public class Wall extends Obstacle {
         if (participant.getJumpRestriction() >= getHeight()) {
             System.out.println("Participant " + participant.getName() + " jumped over " + getHeight() + " meter "
                     + getName());
-        } else {
+        } else if (participant.getJumpRestriction() < getHeight()) {
             System.out.println("Participant " + participant.getName() + " wasn't able to jump over "
                     + getHeight() + " meter " + getName() + ". He jumped for : " + participant.getJumpRestriction());
 
+        } else if (participant.getRunRestriction() < getLength()) {
+            System.out.println();
         }
+
+
     }
 }
+
 
 
 
