@@ -114,10 +114,7 @@ public class HomeWorkApp {
 
     static boolean checkYear(int year) {
         System.out.println();
-        if ((year % 4 != 0 || year % 100 == 0) && (year % 400 != 0)) {
-            return false;
-        } else {
-            return true;
-        }
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+
     }
 }
