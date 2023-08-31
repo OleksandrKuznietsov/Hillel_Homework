@@ -11,7 +11,7 @@ public class ArrayValueCalculator {
                     sum += Integer.parseInt(stringArray[i][j]);
                 } catch (NumberFormatException e) {
                     System.out.println("Cell (" + i + "x" + j + ") contains incorrect Data Type.");
-                    throw new ArrayDataException("Incorrect Data Type.");
+                    throw new ArrayDataException("Incorrect Data Type.\n" + e);
                 }
 
             }
