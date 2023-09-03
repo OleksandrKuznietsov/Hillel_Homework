@@ -3,7 +3,7 @@ package edu.hillel.Homework9_Generics;
 import java.util.ArrayList;
 
 public class Box<T extends Fruit> {
-    private String name;
+    private final String name;
     ArrayList<T> box = new ArrayList<>();
 
     public Box(String name) {
