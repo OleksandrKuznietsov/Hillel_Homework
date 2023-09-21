@@ -47,7 +47,7 @@ public class FileNavigator {
 
     public void remove(String inputPath) {
         System.out.println("------------------------------------");
-        System.out.println("Removed files from path; " + inputPath);
+        System.out.println("Removed files from path: " + inputPath);
         fileMap.remove(inputPath);
     }
 
