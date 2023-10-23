@@ -12,7 +12,6 @@ public class FileLogger {
     private FileLoggerConfiguration config;
     private SimpleDateFormat dateFormat;
     private LocalTime currentTime = LocalTime.now();
-    private BufferedWriter writer;
 
     public FileLogger(FileLoggerConfiguration config) {
         this.config = config;
@@ -29,10 +28,9 @@ public class FileLogger {
     }
 
     public void log(String message, LoggingLevel loggingLevel) {
-        try {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true))) {
             checkSize(message);
             createFile();
-            writer = new BufferedWriter(new FileWriter(logFile, true));
             writer.write("\n[" + currentTime + "]" + "[" + loggingLevel + "]" + "Message: " + message);
             writer.flush();
             fileSize += message.length();
@@ -43,11 +41,9 @@ public class FileLogger {
 
     public void createFile() throws IOException {
         if (fileSize >= config.getMaxFileSize()) {
-            writer.close();
             dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
             String newFilepath = "Log_" + dateFormat.format(new Date()) + ".txt";
             logFile = new File(newFilepath);
-            writer = new BufferedWriter(new FileWriter(logFile, true));
             fileSize = 0;
         }
     }

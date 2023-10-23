@@ -6,8 +6,7 @@ import java.io.IOException;
 
 public class FileLoggerConfigurationLoader {
     public FileLoggerConfiguration load(String configFile) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(configFile));
+        try (BufferedReader reader = new BufferedReader(new FileReader(configFile))) {
             String file = null;
             LoggingLevel level = null;
             long maxSize = 0;
@@ -24,7 +23,6 @@ public class FileLoggerConfigurationLoader {
                     format = line.substring("FORMAT: ".length());
                 }
             }
-            reader.close();
             return new FileLoggerConfiguration(file, level, (int) maxSize, format);
         } catch (IOException e) {
             System.out.println(e.getMessage());
