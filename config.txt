@@ -1,0 +1,7 @@
+FILE: Test.txt
+
+LEVEL: INFO
+
+MAX-SIZE: 256
+
+FORMAT: .txt
