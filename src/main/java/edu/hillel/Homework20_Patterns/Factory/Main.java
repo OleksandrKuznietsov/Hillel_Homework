@@ -2,12 +2,12 @@ package edu.hillel.Homework20_Patterns.Factory;
 
 public class Main {
     public static void main(String[] args) {
-        Factory factory = new Factory();
+     FurnitureFactory chairFactory = new ChairFactory();
+     Furniture chair = chairFactory.createFurniture();
+     chair.create();
 
-        Furniture table = factory.createFurniture("table");
-        table.create();
-
-        Furniture chair = factory.createFurniture("chair");
-        chair.create();
+     FurnitureFactory tableFactory = new TableFactory();
+     Furniture table = tableFactory.createFurniture();
+     table.create();
     }
 }
